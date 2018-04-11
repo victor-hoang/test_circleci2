@@ -1,0 +1,5 @@
+{
+  "name": "test_circleci",
+  "private": true,
+  "dependencies": {}
+}

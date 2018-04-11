@@ -1,0 +1,552 @@
+# Logfile created on 2018-04-03 11:15:52 +0700 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:15:52 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [46056266] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [46056266] Command: /usr/bin/env mkdir -p /tmp
+  INFO [46056266] Finished in 1.131 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [2def183e] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [2def183e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [2def183e] Finished in 0.307 seconds with exit status 0 (successful).
+  INFO [35fe2d9c] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [35fe2d9c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [35fe2d9c] 	Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
+ DEBUG [35fe2d9c] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [35fe2d9c] Finished in 3.361 seconds with exit status 0 (successful).
+  INFO [bac2ad64] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [bac2ad64] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [bac2ad64] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [7abe8676] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [7abe8676] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [7abe8676] Finished in 0.269 seconds with exit status 1 (failed).
+ DEBUG [f377a0a2] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [f377a0a2] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [f377a0a2] Finished in 0.320 seconds with exit status 1 (failed).
+ DEBUG [a8b60cd1] Running if test ! -d /deploy/apps/iorder_server; then echo "Directory does not exist '/deploy/apps/iorder_server'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [a8b60cd1] Command: if test ! -d /deploy/apps/iorder_server; then echo "Directory does not exist '/deploy/apps/iorder_server'" 1>&2; false; fi
+ DEBUG [a8b60cd1] Finished in 0.303 seconds with exit status 0 (successful).
+  INFO [82c2730e] Running /usr/bin/env git clone --mirror git@github.com:victor-hoang/test_circleci.git /deploy/apps/iorder_server/repo as www@54.255.239.8
+ DEBUG [82c2730e] Command: cd /deploy/apps/iorder_server && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git clone --mirror git@github.com:victor-hoang/test_circleci.git /deploy/apps/iorder_server/repo )
+ DEBUG [82c2730e] 	Cloning into bare repository '/deploy/apps/iorder_server/repo'...
+ DEBUG [82c2730e] 	Warning: Permanently added the RSA host key for IP address '52.74.223.119' to the list of known hosts.
+  INFO [82c2730e] Finished in 6.295 seconds with exit status 0 (successful).
+ DEBUG [d450d41b] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [d450d41b] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [d450d41b] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO [99e0a461] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [99e0a461] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [99e0a461] Finished in 0.338 seconds with exit status 0 (successful).
+  INFO [b265b686] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [b265b686] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b265b686] 	Fetching origin
+ DEBUG [b265b686] 	Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.
+  INFO [b265b686] Finished in 3.212 seconds with exit status 0 (successful).
+ DEBUG [dc5f2f8d] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [dc5f2f8d] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [dc5f2f8d] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [6feb503a] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403041559 as www@54.255.239.8
+ DEBUG [6feb503a] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403041559 )
+  INFO [6feb503a] Finished in 0.270 seconds with exit status 0 (successful).
+  INFO [3562e607] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403041559 as www@54.255.239.8
+ DEBUG [3562e607] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403041559 )
+ DEBUG [3562e607] 	fatal: Not a valid object name
+ DEBUG [3562e607] 	tar: 
+ DEBUG [3562e607] 	This does not look like a tar archive
+ DEBUG [3562e607] 	
+ DEBUG [3562e607] 	tar: 
+ DEBUG [3562e607] 	Exiting with failure status due to previous errors
+ DEBUG [3562e607] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:24:31 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bdbc6bca] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [bdbc6bca] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bdbc6bca] Finished in 1.116 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [5edc4dab] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [5edc4dab] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [5edc4dab] Finished in 0.269 seconds with exit status 0 (successful).
+  INFO [f76dc1d9] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [f76dc1d9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [f76dc1d9] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [f76dc1d9] Finished in 3.267 seconds with exit status 0 (successful).
+  INFO [0b2bbc09] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [0b2bbc09] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [0b2bbc09] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [1abd1f27] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [1abd1f27] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [1abd1f27] Finished in 0.453 seconds with exit status 1 (failed).
+ DEBUG [6de4b1a6] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [6de4b1a6] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [6de4b1a6] Finished in 0.271 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [0558227e] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [0558227e] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [0558227e] Finished in 0.299 seconds with exit status 0 (successful).
+  INFO [581b16ef] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [581b16ef] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [581b16ef] Finished in 0.314 seconds with exit status 0 (successful).
+  INFO [8875d1a2] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [8875d1a2] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8875d1a2] 	Fetching origin
+  INFO [8875d1a2] Finished in 3.133 seconds with exit status 0 (successful).
+ DEBUG [4b150adf] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [4b150adf] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [4b150adf] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO [1727bef7] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403042438 as www@54.255.239.8
+ DEBUG [1727bef7] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403042438 )
+  INFO [1727bef7] Finished in 0.325 seconds with exit status 0 (successful).
+  INFO [e6293c02] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403042438 as www@54.255.239.8
+ DEBUG [e6293c02] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403042438 )
+ DEBUG [e6293c02] 	fatal: Not a valid object name
+ DEBUG [e6293c02] 	tar: 
+ DEBUG [e6293c02] 	This does not look like a tar archive
+ DEBUG [e6293c02] 	
+ DEBUG [e6293c02] 	tar: 
+ DEBUG [e6293c02] 	Exiting with failure status due to previous errors
+ DEBUG [e6293c02] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:26:33 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f929e6cf] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [f929e6cf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f929e6cf] Finished in 1.118 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [04d42563] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [04d42563] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [04d42563] Finished in 0.312 seconds with exit status 0 (successful).
+  INFO [634938ff] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [634938ff] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [634938ff] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [634938ff] Finished in 3.181 seconds with exit status 0 (successful).
+  INFO [d0094099] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [d0094099] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [d0094099] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG [3fe1549d] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [3fe1549d] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [3fe1549d] Finished in 0.452 seconds with exit status 1 (failed).
+ DEBUG [d75daa4d] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [d75daa4d] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [d75daa4d] Finished in 0.306 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [67f0f3f0] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [67f0f3f0] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [67f0f3f0] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [76236151] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [76236151] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [76236151] Finished in 0.344 seconds with exit status 0 (successful).
+  INFO [08fbcdba] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [08fbcdba] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [08fbcdba] 	Fetching origin
+  INFO [08fbcdba] Finished in 3.220 seconds with exit status 0 (successful).
+ DEBUG [f320318b] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [f320318b] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [f320318b] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO [da0d8e88] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403042639 as www@54.255.239.8
+ DEBUG [da0d8e88] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403042639 )
+  INFO [da0d8e88] Finished in 0.338 seconds with exit status 0 (successful).
+  INFO [1b669703] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403042639 as www@54.255.239.8
+ DEBUG [1b669703] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403042639 )
+ DEBUG [1b669703] 	fatal: Not a valid object name
+ DEBUG [1b669703] 	tar: 
+ DEBUG [1b669703] 	This does not look like a tar archive
+ DEBUG [1b669703] 	
+ DEBUG [1b669703] 	tar: 
+ DEBUG [1b669703] 	Exiting with failure status due to previous errors
+ DEBUG [1b669703] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:30:20 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [80143d37] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [80143d37] Command: /usr/bin/env mkdir -p /tmp
+  INFO [80143d37] Finished in 1.013 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [3d90afa6] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [3d90afa6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [3d90afa6] Finished in 0.299 seconds with exit status 0 (successful).
+  INFO [52c9e359] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [52c9e359] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [52c9e359] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [52c9e359] Finished in 3.328 seconds with exit status 0 (successful).
+  INFO [765a435e] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [765a435e] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [765a435e] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [27a84b55] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [27a84b55] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [27a84b55] Finished in 0.342 seconds with exit status 1 (failed).
+ DEBUG [42d04a35] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [42d04a35] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [42d04a35] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [0017a653] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [0017a653] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [0017a653] Finished in 0.305 seconds with exit status 0 (successful).
+  INFO [dbb55967] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [dbb55967] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [dbb55967] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [4820429e] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [4820429e] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4820429e] 	Fetching origin
+  INFO [4820429e] Finished in 3.589 seconds with exit status 0 (successful).
+ DEBUG [6521e0ed] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [6521e0ed] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [6521e0ed] Finished in 0.210 seconds with exit status 0 (successful).
+  INFO [c218eb62] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043026 as www@54.255.239.8
+ DEBUG [c218eb62] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043026 )
+  INFO [c218eb62] Finished in 0.268 seconds with exit status 0 (successful).
+  INFO [10800856] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043026 as www@54.255.239.8
+ DEBUG [10800856] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043026 )
+ DEBUG [10800856] 	fatal: Not a valid object name
+ DEBUG [10800856] 	tar: 
+ DEBUG [10800856] 	This does not look like a tar archive
+ DEBUG [10800856] 	
+ DEBUG [10800856] 	tar: 
+ DEBUG [10800856] 	Exiting with failure status due to previous errors
+ DEBUG [10800856] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:36:28 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fa8cd490] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [fa8cd490] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fa8cd490] Finished in 1.087 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [8ad41f8c] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [8ad41f8c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [8ad41f8c] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [1511619f] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [1511619f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [1511619f] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [1511619f] Finished in 3.211 seconds with exit status 0 (successful).
+  INFO [ff36d6fb] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [ff36d6fb] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [ff36d6fb] Finished in 0.225 seconds with exit status 0 (successful).
+ DEBUG [37caefe0] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [37caefe0] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [37caefe0] Finished in 0.336 seconds with exit status 1 (failed).
+ DEBUG [3cdba49b] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [3cdba49b] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [3cdba49b] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [ad4045fa] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [ad4045fa] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [ad4045fa] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [e20f2ddf] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [e20f2ddf] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [e20f2ddf] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [33b26db6] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [33b26db6] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [33b26db6] 	Fetching origin
+  INFO [33b26db6] Finished in 3.223 seconds with exit status 0 (successful).
+ DEBUG [541b9eb4] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [541b9eb4] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [541b9eb4] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [1fe5f4e1] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043634 as www@54.255.239.8
+ DEBUG [1fe5f4e1] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043634 )
+  INFO [1fe5f4e1] Finished in 0.329 seconds with exit status 0 (successful).
+  INFO [5c900ad9] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043634 as www@54.255.239.8
+ DEBUG [5c900ad9] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043634 )
+ DEBUG [5c900ad9] 	fatal: Not a valid object name
+ DEBUG [5c900ad9] 	tar: 
+ DEBUG [5c900ad9] 	This does not look like a tar archive
+ DEBUG [5c900ad9] 	
+ DEBUG [5c900ad9] 	tar: 
+ DEBUG [5c900ad9] 	Exiting with failure status due to previous errors
+ DEBUG [5c900ad9] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:36:48 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6ed66920] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [6ed66920] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6ed66920] Finished in 1.098 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [21097a8d] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [21097a8d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [21097a8d] Finished in 0.325 seconds with exit status 0 (successful).
+  INFO [87549fd7] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [87549fd7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [87549fd7] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [87549fd7] Finished in 3.340 seconds with exit status 0 (successful).
+  INFO [06f81c38] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [06f81c38] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [06f81c38] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG [f7abc967] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [f7abc967] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [f7abc967] Finished in 0.257 seconds with exit status 1 (failed).
+ DEBUG [2de43f15] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [2de43f15] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [2de43f15] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [8a143cfe] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [8a143cfe] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [8a143cfe] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [f0a8a766] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [f0a8a766] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [f0a8a766] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [7d71328d] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [7d71328d] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7d71328d] 	Fetching origin
+  INFO [7d71328d] Finished in 3.328 seconds with exit status 0 (successful).
+ DEBUG [b5e4cf58] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [b5e4cf58] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [b5e4cf58] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [94fbb965] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043654 as www@54.255.239.8
+ DEBUG [94fbb965] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403043654 )
+  INFO [94fbb965] Finished in 0.350 seconds with exit status 0 (successful).
+  INFO [a382736e] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043654 as www@54.255.239.8
+ DEBUG [a382736e] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403043654 )
+ DEBUG [a382736e] 	fatal: Not a valid object name
+ DEBUG [a382736e] 	tar: 
+ DEBUG [a382736e] 	This does not look like a tar archive
+ DEBUG [a382736e] 	
+ DEBUG [a382736e] 	tar: 
+ DEBUG [a382736e] 	Exiting with failure status due to previous errors
+ DEBUG [a382736e] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:40:19 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2eb1d300] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [2eb1d300] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2eb1d300] Finished in 1.072 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [fe88f95d] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [fe88f95d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [fe88f95d] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [07256d37] Running /usr/bin/env git ls-remote git://github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [07256d37] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git://github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [07256d37] 	fatal: unable to connect to github.com:victor-hoang:
+ DEBUG [07256d37] 	github.com:victor-hoang: Name or service not known
+ DEBUG [07256d37] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:40:47 +0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c2f16e56] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [c2f16e56] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c2f16e56] Finished in 1.106 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [5a0a744a] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [5a0a744a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [5a0a744a] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [e0514460] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [e0514460] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [e0514460] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [e0514460] Finished in 3.237 seconds with exit status 0 (successful).
+  INFO [d9584484] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [d9584484] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [d9584484] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [5a846e03] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [5a846e03] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [5a846e03] Finished in 0.285 seconds with exit status 1 (failed).
+ DEBUG [6d033f22] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [6d033f22] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [6d033f22] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [e9403cec] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [e9403cec] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [e9403cec] Finished in 0.262 seconds with exit status 0 (successful).
+  INFO [8e80e6b3] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [8e80e6b3] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [8e80e6b3] Finished in 0.258 seconds with exit status 0 (successful).
+  INFO [e87a3aab] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [e87a3aab] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e87a3aab] 	Fetching origin
+  INFO [e87a3aab] Finished in 2.922 seconds with exit status 0 (successful).
+ DEBUG [11e95eea] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [11e95eea] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [11e95eea] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [f5f4b6bc] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403044053 as www@54.255.239.8
+ DEBUG [f5f4b6bc] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403044053 )
+  INFO [f5f4b6bc] Finished in 0.273 seconds with exit status 0 (successful).
+  INFO [7b27fa8f] Running /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403044053 as www@54.255.239.8
+ DEBUG [7b27fa8f] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive config_deploy | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403044053 )
+ DEBUG [7b27fa8f] 	fatal: Not a valid object name
+ DEBUG [7b27fa8f] 	tar: 
+ DEBUG [7b27fa8f] 	This does not look like a tar archive
+ DEBUG [7b27fa8f] 	
+ DEBUG [7b27fa8f] 	tar: 
+ DEBUG [7b27fa8f] 	Exiting with failure status due to previous errors
+ DEBUG [7b27fa8f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 11:52:24 +0700 cap production deploy BRANCH=master
+  INFO ---------------------------------------------------------------------------
+  INFO [ff179850] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [ff179850] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ff179850] Finished in 0.815 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [f9db9295] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [f9db9295] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [f9db9295] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO [002e55e9] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [002e55e9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [002e55e9] 	6058c05f88f4c929720b83b85df38462c26686a3	HEAD
+  INFO [002e55e9] Finished in 2.923 seconds with exit status 0 (successful).
+  INFO [da0a5c71] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [da0a5c71] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [da0a5c71] Finished in 0.167 seconds with exit status 0 (successful).
+ DEBUG [0611701b] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [0611701b] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [0611701b] Finished in 0.200 seconds with exit status 1 (failed).
+ DEBUG [cfb757c8] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [cfb757c8] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [cfb757c8] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [33ee039a] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [33ee039a] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [33ee039a] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [00951417] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [00951417] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [00951417] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [0fb28c6f] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [0fb28c6f] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0fb28c6f] 	Fetching origin
+  INFO [0fb28c6f] Finished in 3.118 seconds with exit status 0 (successful).
+ DEBUG [1cbdddbb] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [1cbdddbb] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [1cbdddbb] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [16cc3865] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403045229 as www@54.255.239.8
+ DEBUG [16cc3865] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403045229 )
+  INFO [16cc3865] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [6d53d0a3] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403045229 as www@54.255.239.8
+ DEBUG [6d53d0a3] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403045229 )
+  INFO [6d53d0a3] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [f9640175] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [f9640175] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [f9640175] Finished in 0.319 seconds with exit status 0 (successful).
+ DEBUG [2deb537b] Running /usr/bin/env git rev-list --max-count=1 master as www@54.255.239.8
+ DEBUG [2deb537b] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [2deb537b] 	6058c05f88f4c929720b83b85df38462c26686a3
+ DEBUG [2deb537b] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [08181413] Running if test ! -d /deploy/apps/iorder_server/releases/20180403045229; then echo "Directory does not exist '/deploy/apps/iorder_server/releases/20180403045229'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [08181413] Command: if test ! -d /deploy/apps/iorder_server/releases/20180403045229; then echo "Directory does not exist '/deploy/apps/iorder_server/releases/20180403045229'" 1>&2; false; fi
+ DEBUG [08181413] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [1b51905a] Running /usr/bin/env echo "6058c05f88f4c929720b83b85df38462c26686a3" >> REVISION as www@54.255.239.8
+ DEBUG [1b51905a] Command: cd /deploy/apps/iorder_server/releases/20180403045229 && /usr/bin/env echo "6058c05f88f4c929720b83b85df38462c26686a3" >> REVISION
+  INFO [1b51905a] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [bf355de9] Running /usr/bin/env ln -s /deploy/apps/iorder_server/releases/20180403045229 /deploy/apps/iorder_server/releases/current as www@54.255.239.8
+ DEBUG [bf355de9] Command: /usr/bin/env ln -s /deploy/apps/iorder_server/releases/20180403045229 /deploy/apps/iorder_server/releases/current
+  INFO [bf355de9] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [68d1353e] Running /usr/bin/env mv /deploy/apps/iorder_server/releases/current /deploy/apps/iorder_server as www@54.255.239.8
+ DEBUG [68d1353e] Command: /usr/bin/env mv /deploy/apps/iorder_server/releases/current /deploy/apps/iorder_server
+  INFO [68d1353e] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [43026486] Running /usr/bin/env ls -x /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [43026486] Command: /usr/bin/env ls -x /deploy/apps/iorder_server/releases
+ DEBUG [43026486] 	20180403041559	20180403042438	20180403042639	20180403043026	20180403043634
+20180403043654	20180403044053	20180403045229
+ DEBUG [43026486] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 8 deployed releases on 54.255.239.8
+ DEBUG [9a2c4277] Running [ -d /deploy/apps/iorder_server/current ] as www@54.255.239.8
+ DEBUG [9a2c4277] Command: [ -d /deploy/apps/iorder_server/current ]
+ DEBUG [9a2c4277] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [700c0596] Running /usr/bin/env readlink /deploy/apps/iorder_server/current as www@54.255.239.8
+ DEBUG [700c0596] Command: /usr/bin/env readlink /deploy/apps/iorder_server/current
+ DEBUG [700c0596] 	/deploy/apps/iorder_server/releases/20180403045229
+ DEBUG [700c0596] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [2d06898f] Running /usr/bin/env rm -rf /deploy/apps/iorder_server/releases/20180403041559 /deploy/apps/iorder_server/releases/20180403042438 /deploy/apps/iorder_server/releases/20180403042639 as www@54.255.239.8
+ DEBUG [2d06898f] Command: /usr/bin/env rm -rf /deploy/apps/iorder_server/releases/20180403041559 /deploy/apps/iorder_server/releases/20180403042438 /deploy/apps/iorder_server/releases/20180403042639
+  INFO [2d06898f] Finished in 0.212 seconds with exit status 0 (successful).
+ DEBUG [b0ece6d3] Running if test ! -d /deploy/apps/iorder_server/releases; then echo "Directory does not exist '/deploy/apps/iorder_server/releases'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [b0ece6d3] Command: if test ! -d /deploy/apps/iorder_server/releases; then echo "Directory does not exist '/deploy/apps/iorder_server/releases'" 1>&2; false; fi
+ DEBUG [b0ece6d3] Finished in 0.202 seconds with exit status 0 (successful).
+  INFO [b5166a6a] Running /usr/bin/env echo "Branch master (at 6058c05f88f4c929720b83b85df38462c26686a3) deployed as release 20180403045229 by hoangdinhlim" >> /deploy/apps/iorder_server/revisions.log as www@54.255.239.8
+ DEBUG [b5166a6a] Command: cd /deploy/apps/iorder_server/releases && /usr/bin/env echo "Branch master (at 6058c05f88f4c929720b83b85df38462c26686a3) deployed as release 20180403045229 by hoangdinhlim" >> /deploy/apps/iorder_server/revisions.log
+  INFO [b5166a6a] Finished in 0.208 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-04-03 13:24:43 +0700 cap production deploy BRANCH=master
+  INFO ---------------------------------------------------------------------------
+  INFO [40aa3e26] Running /usr/bin/env mkdir -p /tmp as www@54.255.239.8
+ DEBUG [40aa3e26] Command: /usr/bin/env mkdir -p /tmp
+  INFO [40aa3e26] Finished in 3.842 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh 100.0%
+  INFO [de13e1f8] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh as www@54.255.239.8
+ DEBUG [de13e1f8] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_circleci-production-hoangdinhlim.sh
+  INFO [de13e1f8] Finished in 0.221 seconds with exit status 0 (successful).
+  INFO [d5a4430b] Running /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD as www@54.255.239.8
+ DEBUG [d5a4430b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git ls-remote git@github.com:victor-hoang/test_circleci.git HEAD )
+ DEBUG [d5a4430b] 	9d14ffd4cd721b8e63ee7d998ab15543f7f8644e	HEAD
+  INFO [d5a4430b] Finished in 3.166 seconds with exit status 0 (successful).
+  INFO [98b6147f] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [98b6147f] Command: /usr/bin/env mkdir -p /deploy/apps/iorder_server/shared /deploy/apps/iorder_server/releases
+  INFO [98b6147f] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [587ca323] Running [ -f /deploy/apps/iorder_server/current/REVISION ] as www@54.255.239.8
+ DEBUG [587ca323] Command: [ -f /deploy/apps/iorder_server/current/REVISION ]
+ DEBUG [587ca323] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [b3497b70] Running /usr/bin/env cat /deploy/apps/iorder_server/current/REVISION 2>/dev/null as www@54.255.239.8
+ DEBUG [b3497b70] Command: /usr/bin/env cat /deploy/apps/iorder_server/current/REVISION 2>/dev/null
+ DEBUG [b3497b70] 	6058c05f88f4c929720b83b85df38462c26686a3
+ DEBUG [b3497b70] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [1f7c0fc4] Running [ -f /deploy/apps/iorder_server/repo/HEAD ] as www@54.255.239.8
+ DEBUG [1f7c0fc4] Command: [ -f /deploy/apps/iorder_server/repo/HEAD ]
+ DEBUG [1f7c0fc4] Finished in 0.224 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /deploy/apps/iorder_server/repo
+ DEBUG [70eebacb] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [70eebacb] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [70eebacb] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [22965c10] Running /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git as www@54.255.239.8
+ DEBUG [22965c10] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote set-url origin git@github.com:victor-hoang/test_circleci.git )
+  INFO [22965c10] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [3ac4c656] Running /usr/bin/env git remote update --prune as www@54.255.239.8
+ DEBUG [3ac4c656] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3ac4c656] 	Fetching origin
+ DEBUG [3ac4c656] 	From github.com:victor-hoang/test_circleci
+   6058c05..9d14ffd  master     -> master
+  INFO [3ac4c656] Finished in 3.473 seconds with exit status 0 (successful).
+ DEBUG [73f9677f] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [73f9677f] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [73f9677f] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [7b60383d] Running /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403062451 as www@54.255.239.8
+ DEBUG [7b60383d] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env mkdir -p /deploy/apps/iorder_server/releases/20180403062451 )
+  INFO [7b60383d] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO [3df38c75] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403062451 as www@54.255.239.8
+ DEBUG [3df38c75] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /deploy/apps/iorder_server/releases/20180403062451 )
+  INFO [3df38c75] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [2158ffec] Running if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [2158ffec] Command: if test ! -d /deploy/apps/iorder_server/repo; then echo "Directory does not exist '/deploy/apps/iorder_server/repo'" 1>&2; false; fi
+ DEBUG [2158ffec] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG [b4a66e8c] Running /usr/bin/env git rev-list --max-count=1 master as www@54.255.239.8
+ DEBUG [b4a66e8c] Command: cd /deploy/apps/iorder_server/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_circleci-production-hoangdinhlim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b4a66e8c] 	9d14ffd4cd721b8e63ee7d998ab15543f7f8644e
+ DEBUG [b4a66e8c] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [035afe5f] Running if test ! -d /deploy/apps/iorder_server/releases/20180403062451; then echo "Directory does not exist '/deploy/apps/iorder_server/releases/20180403062451'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [035afe5f] Command: if test ! -d /deploy/apps/iorder_server/releases/20180403062451; then echo "Directory does not exist '/deploy/apps/iorder_server/releases/20180403062451'" 1>&2; false; fi
+ DEBUG [035afe5f] Finished in 0.215 seconds with exit status 0 (successful).
+  INFO [01803366] Running /usr/bin/env echo "9d14ffd4cd721b8e63ee7d998ab15543f7f8644e" >> REVISION as www@54.255.239.8
+ DEBUG [01803366] Command: cd /deploy/apps/iorder_server/releases/20180403062451 && /usr/bin/env echo "9d14ffd4cd721b8e63ee7d998ab15543f7f8644e" >> REVISION
+  INFO [01803366] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [8fd76e42] Running /usr/bin/env ln -s /deploy/apps/iorder_server/releases/20180403062451 /deploy/apps/iorder_server/releases/current as www@54.255.239.8
+ DEBUG [8fd76e42] Command: /usr/bin/env ln -s /deploy/apps/iorder_server/releases/20180403062451 /deploy/apps/iorder_server/releases/current
+  INFO [8fd76e42] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [6a039b97] Running /usr/bin/env mv /deploy/apps/iorder_server/releases/current /deploy/apps/iorder_server as www@54.255.239.8
+ DEBUG [6a039b97] Command: /usr/bin/env mv /deploy/apps/iorder_server/releases/current /deploy/apps/iorder_server
+  INFO [6a039b97] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [be26590e] Running /usr/bin/env ls -x /deploy/apps/iorder_server/releases as www@54.255.239.8
+ DEBUG [be26590e] Command: /usr/bin/env ls -x /deploy/apps/iorder_server/releases
+ DEBUG [be26590e] 	20180403043026	20180403043634	20180403043654	20180403044053	20180403045229
+20180403062451
+ DEBUG [be26590e] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.255.239.8
+ DEBUG [c130e1fd] Running [ -d /deploy/apps/iorder_server/current ] as www@54.255.239.8
+ DEBUG [c130e1fd] Command: [ -d /deploy/apps/iorder_server/current ]
+ DEBUG [c130e1fd] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [ab1f513b] Running /usr/bin/env readlink /deploy/apps/iorder_server/current as www@54.255.239.8
+ DEBUG [ab1f513b] Command: /usr/bin/env readlink /deploy/apps/iorder_server/current
+ DEBUG [ab1f513b] 	/deploy/apps/iorder_server/releases/20180403062451
+ DEBUG [ab1f513b] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [041f28da] Running /usr/bin/env rm -rf /deploy/apps/iorder_server/releases/20180403043026 as www@54.255.239.8
+ DEBUG [041f28da] Command: /usr/bin/env rm -rf /deploy/apps/iorder_server/releases/20180403043026
+  INFO [041f28da] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [724cc77e] Running if test ! -d /deploy/apps/iorder_server/releases; then echo "Directory does not exist '/deploy/apps/iorder_server/releases'" 1>&2; false; fi as www@54.255.239.8
+ DEBUG [724cc77e] Command: if test ! -d /deploy/apps/iorder_server/releases; then echo "Directory does not exist '/deploy/apps/iorder_server/releases'" 1>&2; false; fi
+ DEBUG [724cc77e] Finished in 0.208 seconds with exit status 0 (successful).
+  INFO [d111af3b] Running /usr/bin/env echo "Branch master (at 9d14ffd4cd721b8e63ee7d998ab15543f7f8644e) deployed as release 20180403062451 by hoangdinhlim" >> /deploy/apps/iorder_server/revisions.log as www@54.255.239.8
+ DEBUG [d111af3b] Command: cd /deploy/apps/iorder_server/releases && /usr/bin/env echo "Branch master (at 9d14ffd4cd721b8e63ee7d998ab15543f7f8644e) deployed as release 20180403062451 by hoangdinhlim" >> /deploy/apps/iorder_server/revisions.log
+  INFO [d111af3b] Finished in 0.208 seconds with exit status 0 (successful).
